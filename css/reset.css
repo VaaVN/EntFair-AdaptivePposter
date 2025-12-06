@@ -1,0 +1,17 @@
+* {
+  caret-color: transparent;
+  margin: 0;
+  padding: 0;
+  gap: 0px;
+  font-family: "Piazzolla", sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  overflow: visible;
+}
+a {
+  text-decoration: none;
+}
+img {
+  vertical-align: top;
+}
