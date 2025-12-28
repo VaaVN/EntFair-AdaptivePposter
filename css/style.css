@@ -17,7 +17,7 @@ h1 {
   line-height: 78%;
 }
 h2 {
-  font-size: 5vw;
+  font-size: 5em;
   font-weight: 500;
   color: #2c221a;
   text-transform: uppercase;
@@ -26,9 +26,9 @@ h2 {
 p {
   color: #ffecc1;
   text-align: center;
-  font-size: 64px;
-  font-weight: 500;
-  line-height: 73%;
+  font-size: 3.3em;
+  font-weight: 600;
+  line-height: 89%;
 }
 footer {
   overflow: hidden;
@@ -45,11 +45,10 @@ footer {
   overflow: hidden;
 }
 .runningLine {
-  overflow: visible;
-  padding: 10px 0px 20px 0px;
+  width: 100%;
+  height: 6em;
+  overflow: hidden;
   position: relative;
-  height: fit-content;
-  width: fit-content;
 }
 .red {
   background-color: #f05b51;
@@ -109,6 +108,15 @@ footer {
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
+
+.leaf {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  img {
+    transform: translateY(-50%);
+  }
+}
 .date {
   justify-content: space-between;
 }
@@ -123,19 +131,15 @@ footer {
   }
 }
 .taxiCar {
-  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
   width: 100%;
   height: 100%;
   img {
     height: 80%;
     width: auto;
-    position: absolute;
-    left: 2.3em;
-    top: 15%;
   }
-}
-.saleText {
-  padding-top: 20px;
 }
 .saleWord {
   color: #96a757;
@@ -147,6 +151,14 @@ footer {
   align-self: stretch;
   width: 100%;
   height: 70%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  img {
+    height: 90%;
+    width: auto;
+    transform: translateY(-5%);
+  }
 }
 .time,
 .saleText {
@@ -156,7 +168,10 @@ footer {
 }
 .saleText,
 .aboutTick {
-  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   width: 100%;
   height: 20%;
 }
@@ -166,8 +181,12 @@ footer {
   width: 100%;
   height: 80%;
 }
+.leafsDrop {
+  overflow: hidden;
+  position: relative;
+}
 .productShow {
-  height: 75svh;
+  height: 100%;
   width: 100%;
 }
 .aboutMe {
@@ -175,33 +194,52 @@ footer {
   flex-wrap: nowrap;
   align-items: flex-start;
 }
-.mainText {
-  transform: translateX(0%);
+.runningText {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  white-space: nowrap;
   animation: runAnimMain 14s linear infinite;
 }
-.mainText2 {
-  transform: translateX(50%);
-  animation: runAnimMain2 14s linear infinite;
-  position: absolute;
-  top: 10px;
+.leafses {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  animation: dropAnimMain 2s linear infinite;
+}
+
+.mainText {
+  align-items: center;
+  justify-content: center;
 }
 .qr {
   height: 5vw;
   width: 5vw;
+  transform: translateY(3%);
+}
+
+@keyframes dropAnimMain {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 @keyframes runAnimMain {
   0% {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(-50%);
   }
 }
-@keyframes runAnimMain2 {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0%);
+@media (max-width: 1024px) {
+  .screen2,
+  .screen4 {
+    flex-direction: column;
+    height: 200svh;
   }
 }
