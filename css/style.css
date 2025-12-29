@@ -92,6 +92,13 @@ footer {
   width: 100%;
   height: 100vh;
 }
+.runningLineProduct {
+  width: 100%;
+  height: 10%;
+  overflow: hidden;
+  position: relative;
+  z-index: 4;
+}
 .screen3 {
   overflow: hidden;
   display: flex;
@@ -99,7 +106,7 @@ footer {
   align-items: center;
   align-self: stretch;
   flex-direction: column;
-  height: 100svh;
+  height: 100vh;
 }
 .columnBlock {
   overflow: hidden;
@@ -119,17 +126,30 @@ footer {
 }
 .cal1 {
   position: absolute;
-  left: 29%;
-  height: 80%;
-  width: auto;
+  left: 30%;
+  width: 50%;
+  height: auto;
+  transform: scale(1, 1);
+  transition: transform 0.4s ease;
 }
 .cal2 {
-  height: 80%;
-  width: auto;
+  width: 50%;
+  height: auto;
+  color: #b9ab8a;
+  transition: color 0.4s ease;
+}
+.date:hover {
+  .cal1 {
+    transform: scale(1, 0.05) translateY(-650%);
+  }
+  .cal2 {
+    color: #ebd9af;
+  }
 }
 .dateLeaf {
-  height: 100%;
-  width: auto;
+  width: 30%;
+  height: auto;
+  transform: translateY(10%);
 }
 .adress {
   position: relative;
@@ -202,9 +222,35 @@ footer {
   height: 100%;
   img {
     height: 80%;
+    animation: taxiAnim 3s linear infinite;
+    animation-timing-function: cubic-bezier(0.57, 0.4, 0.55, 1.17);
     width: auto;
   }
 }
+@keyframes taxiAnim {
+  0% {
+    transform: translateX(-200%) translateY(-15%) scale(1, 1);
+  }
+  40% {
+    transform: translateX(-10%) translateY(-15%) scale(1, 1);
+  }
+  45% {
+    transform: translateX(-10%) translateY(-15%) scale(1, 1.2);
+  }
+  50% {
+    transform: translateX(-10%) translateY(-15%) scale(1, 1);
+  }
+  55% {
+    transform: translateX(-10%) translateY(-15%) scale(1, 1.2);
+  }
+  60% {
+    transform: translateX(-10%) translateY(-15%) scale(1, 1);
+  }
+  100% {
+    transform: translateX(200%) translateY(-15%) scale(1, 1);
+  }
+}
+
 .saleWord {
   color: #96a757;
   animation: sw1 3s linear infinite;
@@ -328,7 +374,7 @@ footer {
 }
 .productShow {
   position: relative;
-  height: 100%;
+  height: 80%;
   width: 100%;
 }
 .aboutMe {
@@ -357,8 +403,8 @@ footer {
   justify-content: center;
 }
 .qr {
-  height: 5vw;
-  width: 5vw;
+  height: 100%;
+  width: auto;
   transform: translateY(3%);
 }
 .table {
@@ -393,7 +439,6 @@ footer {
   right: 0%;
   bottom: 0%;
   animation: el1Anim 5s linear infinite;
-  animation-delay: 2s;
   position: absolute;
 }
 .el3 {
@@ -471,6 +516,417 @@ footer {
     transform: translateX(-50%);
   }
 }
+.ticket1 {
+  position: absolute;
+  top: -50%;
+  animation: ticket1Anim 400ms linear infinite;
+  animation-delay: 0s;
+  animation-play-state: running;
+}
+.ticket2 {
+  position: absolute;
+  top: -50%;
+  animation: ticket1Anim 440ms linear infinite;
+  animation-delay: 1s;
+  animation-play-state: running;
+}
+.ticket3 {
+  position: absolute;
+  right: 0;
+  top: -50%;
+  animation: ticket1Anim 460ms linear infinite;
+  animation-delay: 3s;
+  animation-play-state: running;
+}
+.ticket4 {
+  position: absolute;
+  right: 0;
+  top: -50%;
+  animation-delay: 2s;
+  animation: ticket1Anim 420ms linear infinite;
+  animation-play-state: running;
+}
+@keyframes ticket1Anim {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(360%);
+  }
+}
+.ticket1:hover,
+.ticket2:hover,
+.ticket3:hover,
+.ticket4:hover {
+  animation-play-state: paused;
+  z-index: 6;
+}
+.paymant {
+  position: relative;
+}
+.hand1 {
+  position: absolute;
+  z-index: 5;
+  animation: hand1Anim 5s ease-in-out infinite;
+}
+.hand2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  animation: hand2Anim 5s ease-in-out infinite;
+}
+.money1 {
+  position: absolute;
+  left: 20%;
+  animation: money1Anim 5s ease-in-out infinite;
+}
+.money2 {
+  position: absolute;
+  left: 20%;
+  animation: money2Anim 5s ease-in-out infinite;
+}
+.money3 {
+  position: absolute;
+  left: 20%;
+  animation: money3Anim 5s ease-in-out infinite;
+}
+
+@keyframes hand1Anim {
+  0% {
+    transform: translateX(-100%);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  75% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes hand2Anim {
+  0% {
+    transform: translateX(100%);
+  }
+  25% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  75% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes money1Anim {
+  0% {
+    transform: translateX(-400%);
+  }
+  25% {
+    transform: translateX(-400%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  75% {
+    transform: translateX(200%) translateY(500%);
+  }
+  100% {
+    transform: translateX(600%) translateY(500%);
+  }
+}
+@keyframes money2Anim {
+  0% {
+    transform: translateX(-400%);
+  }
+  25% {
+    transform: translateX(-400%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  75% {
+    transform: translateX(220%) translateY(450%);
+  }
+  100% {
+    transform: translateX(600%) translateY(500%);
+  }
+}
+@keyframes money3Anim {
+  0% {
+    transform: translateX(-400%);
+  }
+  25% {
+    transform: translateX(-400%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  75% {
+    transform: translateX(240%) translateY(470%);
+  }
+  100% {
+    transform: translateX(600%) translateY(500%);
+  }
+}
+
+.goTo {
+  position: relative;
+}
+.kid {
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+  animation: kidAnim 7s ease-in-out infinite;
+}
+@keyframes kidAnim {
+  0% {
+    transform: translateX(-100%) rotateY(0);
+  }
+  50% {
+    transform: translateX(200%) rotateY(0);
+  }
+  51% {
+    transform: translateX(200%) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(-100%) rotateY(180deg);
+  }
+}
+.tea {
+  position: absolute;
+  z-index: 6;
+  height: 80%;
+  transform: translateX(140%) translateY(20%);
+  animation: teaAnim 5s ease-in-out infinite;
+}
+@keyframes teaAnim {
+  0% {
+    transform: translateX(140%) translateY(20%) scale(1, 1);
+  }
+  25% {
+    transform: translateX(250%) translateY(15%) scale(0.8, 0.8);
+  }
+  50% {
+    transform: translateX(390%) translateY(15%) scale(0.8, 0.8);
+  }
+  50.00005% {
+    transform: translateX(-100%) translateY(15%) scale(0.8, 0.8);
+  }
+  75% {
+    transform: translateX(20%) translateY(15%) scale(0.8, 0.8);
+  }
+  100% {
+    transform: translateX(140%) translateY(20%) scale(1, 1);
+  }
+}
+.tea1 {
+  position: absolute;
+  z-index: 6;
+  height: 80%;
+  transform: translateX(140%) translateY(20%);
+  animation: tea1Anim 5s ease-in-out infinite;
+}
+@keyframes tea1Anim {
+  0% {
+    transform: translateX(-100%) translateY(15%) scale(0.8, 0.8);
+  }
+  25% {
+    transform: translateX(20%) translateY(15%) scale(0.8, 0.8);
+  }
+  50% {
+    transform: translateX(140%) translateY(20%) scale(1, 1);
+  }
+  75% {
+    transform: translateX(250%) translateY(15%) scale(0.8, 0.8);
+  }
+  100% {
+    transform: translateX(390%) translateY(15%) scale(0.8, 0.8);
+  }
+}
+
+.honey {
+  position: absolute;
+  z-index: 6;
+  height: 45%;
+  transform: translateX(450%) translateY(85%);
+  animation: honeyAnim 5s ease-in-out infinite;
+}
+@keyframes honeyAnim {
+  0% {
+    transform: translateX(450%) translateY(85%) scale(1, 1);
+  }
+  25% {
+    transform: translateX(640%) translateY(85%) scale(1, 1);
+  }
+  25.00005% {
+    transform: translateX(-100%) translateY(85%) scale(1, 1);
+  }
+  50% {
+    transform: translateX(110%) translateY(85%) scale(1, 1);
+  }
+  75% {
+    transform: translateX(260%) translateY(85%) scale(1.2, 1.2);
+  }
+  100% {
+    transform: translateX(450%) translateY(85%) scale(1, 1);
+  }
+}
+.leafHair {
+  position: absolute;
+  z-index: 6;
+  height: 70%;
+  transform: translateX(30%) translateY(30%);
+  animation: hairAnim 5s ease-in-out infinite;
+}
+@keyframes hairAnim {
+  0% {
+    transform: translateX(30%) translateY(30%) scale(1, 1);
+  }
+  25% {
+    transform: translateX(140%) translateY(30%) scale(1.3, 1.3);
+  }
+  50% {
+    transform: translateX(260%) translateY(30%) scale(1, 1);
+  }
+  75% {
+    transform: translateX(400%) translateY(30%) scale(1, 1);
+  }
+  75.00005% {
+    transform: translateX(-100%) translateY(30%) scale(1, 1);
+  }
+  100% {
+    transform: translateX(30%) translateY(30%) scale(1, 1);
+  }
+}
+.productText {
+  transform: translateX(-5%);
+  animation: prTextAnim 5s ease-in-out infinite;
+}
+@keyframes prTextAnim {
+  0% {
+    transform: translateX(-5%);
+  }
+  25% {
+    transform: translateX(-20%);
+  }
+  50% {
+    transform: translateX(-35%);
+  }
+  75% {
+    transform: translateX(-60%);
+  }
+  100% {
+    transform: translateX(-75%);
+  }
+}
+.deal {
+  position: relative;
+}
+.hair2 {
+  position: absolute;
+  height: 50%;
+  animation-delay: 2s;
+  animation: hair2Anim 5s ease-in-out infinite;
+}
+.tea2 {
+  position: absolute;
+  height: 40%;
+  right: 0;
+  animation-delay: 2s;
+  animation: tea2Anim 5s ease-in-out infinite;
+}
+.card {
+  position: absolute;
+  bottom: -10%;
+  width: 150%;
+  animation-delay: 2s;
+  animation: cardAnim 5s ease-in-out infinite;
+}
+@keyframes hair2Anim {
+  0% {
+    transform: translateX(-400%);
+  }
+  25% {
+    transform: translateX(-400%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  75% {
+    transform: translateX(200%) translateY(500%);
+  }
+  100% {
+    transform: translateX(600%) translateY(500%);
+  }
+}
+@keyframes tea2Anim {
+  0% {
+    transform: translateX(-400%);
+  }
+  25% {
+    transform: translateX(-400%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  75% {
+    transform: translateX(-20%) translateY(500%);
+  }
+  100% {
+    transform: translateX(300%) translateY(500%);
+  }
+}
+@keyframes cardAnim {
+  0% {
+    transform: translateX(-400%);
+  }
+  25% {
+    transform: translateX(-400%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  75% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+.mapPoint {
+  position: absolute;
+  width: 8%;
+  transform: translateX(1000%) translateY(130%);
+  transform-origin: left bottom;
+  animation: mapPointAnim 1s linear infinite;
+}
+@keyframes mapPointAnim {
+  0% {
+    transform: translateX(1005%) translateY(130%) rotate(-30deg);
+  }
+  25% {
+    transform: translateX(1005%) translateY(130%) rotate(0deg);
+  }
+  50% {
+    transform: translateX(1005%) translateY(130%) rotate(30deg);
+  }
+  75% {
+    transform: translateX(1005%) translateY(130%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(1005%) translateY(130%) rotate(-30deg);
+  }
+}
+
 @media (max-width: 1050px) {
   .screen2,
   .screen4 {
@@ -478,31 +934,55 @@ footer {
   }
   .el1 {
     bottom: 5%;
+    width: 25vw;
   }
   .el2 {
     bottom: 5%;
+    width: 35vw;
   }
   .el3 {
     top: 5%;
+    width: 25vw;
   }
   .el4 {
     top: 5%;
+    width: 35vw;
   }
   .el5 {
     top: 5%;
+    width: 25vw;
   }
   .el6 {
     bottom: 5%;
+    width: 35vw;
   }
   .el8 {
     top: 15%;
+    width: 15vw;
   }
   .el7 {
+    width: 15vw;
     left: 50%;
     bottom: 5%;
   }
+  .taxiCar {
+    img {
+      height: 70%;
+      width: auto;
+    }
+  }
 }
 @media (max-width: 500px) {
+  .taxiCar {
+    img {
+      height: 60%;
+      width: auto;
+    }
+  }
+  .runningLineProduct {
+    width: 100%;
+    height: 15%;
+  }
   .rowBlock {
     flex-direction: column;
   }
@@ -518,32 +998,40 @@ footer {
   }
   .el1 {
     left: 0%;
+    width: 35vw;
     bottom: 10%;
   }
   .el2 {
+    width: 45vw;
     right: 40%;
     bottom: 10%;
   }
   .el3 {
     top: 10%;
+    width: 35vw;
     left: 0%;
   }
   .el4 {
+    width: 45vw;
     right: 5%;
   }
   .el5 {
-    top: 15%;
-    right: 70%;
+    top: 25%;
+    width: 35vw;
+    right: 50%;
   }
   .el6 {
+    width: 45vw;
     left: 20%;
     bottom: 10%;
   }
   .el7 {
+    width: 25vw;
     left: 60%;
     bottom: 10%;
   }
   .el8 {
+    width: 25vw;
     top: 10%;
     left: 30%;
   }
