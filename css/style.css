@@ -475,7 +475,6 @@ footer {
   width: 25vw;
   bottom: 0%;
   animation: el1Anim 5s linear infinite;
-  animation-delay: 1s;
   position: absolute;
   animation: el2Anim 5s linear infinite;
 }
