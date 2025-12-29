@@ -812,19 +812,19 @@ footer {
 }
 @keyframes prTextAnim {
   0% {
-    transform: translateX(-5%);
+    transform: translateX(-5%) translateY(5%);
   }
   25% {
-    transform: translateX(-20%);
+    transform: translateX(-20%) translateY(5%);
   }
   50% {
-    transform: translateX(-35%);
+    transform: translateX(-35%) translateY(5%);
   }
   75% {
-    transform: translateX(-60%);
+    transform: translateX(-60%) translateY(5%);
   }
   100% {
-    transform: translateX(-75%);
+    transform: translateX(-75%) translateY(5%);
   }
 }
 .deal {
