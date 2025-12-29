@@ -117,19 +117,22 @@ footer {
   width: 100%;
   height: 100%;
 }
+.cal1 {
+  position: absolute;
+  left: 29%;
+  height: 80%;
+  width: auto;
+}
+.cal2 {
+  height: 80%;
+  width: auto;
+}
 .dateLeaf {
   height: 100%;
   width: auto;
 }
 .adress {
   position: relative;
-  p {
-    position: absolute;
-    top: 10px;
-    left: 30px;
-    color: #fbe7d6;
-    font-size: 1.5vw;
-  }
   background-image: url("../assets/img/Map.svg");
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -137,13 +140,25 @@ footer {
 
 .leaf {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  width: 100%;
+  height: 100%;
   img {
-    transform: translateY(-50%);
+    transform: rotate(0deg);
+    transition: width 1s ease, transform 1s ease;
+    height: auto;
+    width: 30%;
+  }
+  img:hover {
+    width: 70%;
+    transform: rotate(180deg);
   }
 }
 .date {
+  position: relative;
+  padding-top: 20px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -170,8 +185,13 @@ footer {
   width: 100%;
   height: 100%;
   img {
+    animation: emblemAnim 3s linear infinite;
+    animation-play-state: running;
     height: auto;
     width: 100%;
+  }
+  img:hover {
+    animation-play-state: paused;
   }
 }
 .taxiCar {
@@ -187,21 +207,57 @@ footer {
 }
 .saleWord {
   color: #96a757;
+  animation: sw1 3s linear infinite;
 }
 .saleWord2 {
   color: #f3b545;
+  animation: sw2 3s linear infinite;
 }
+
+@keyframes sw1 {
+  0% {
+    color: #96a757;
+  }
+  50% {
+    color: #ffecc1;
+  }
+  100% {
+    color: #96a757;
+  }
+}
+
+@keyframes sw2 {
+  0% {
+    color: #f3b545;
+  }
+  50% {
+    color: #ffecc1;
+  }
+  100% {
+    color: #f3b545;
+  }
+}
+
 .tree {
   align-self: stretch;
   width: 100%;
-  height: 70%;
+  perspective: 800px;
+  height: 100%;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   img {
     height: 90%;
     width: auto;
-    transform: translateY(-5%);
+    animation: treeAnim 3s linear infinite;
+  }
+}
+@keyframes treeAnim {
+  0% {
+    transform: translateY(-5%) rotateY(0);
+  }
+  100% {
+    transform: translateY(-5%) rotateY(360deg);
   }
 }
 .time {
@@ -209,6 +265,7 @@ footer {
   p {
     font-size: 7em;
     color: #2c221a;
+    animation: timeTextAnim 3s linear infinite;
     font-style: italic;
     font-weight: 700;
     line-height: 100%;
@@ -219,7 +276,30 @@ footer {
   gap: 20px;
   align-self: stretch;
   width: 100%;
-  height: 30%;
+  animation: timeBGAnim 3s linear infinite;
+  height: fit-content;
+}
+@keyframes timeBGAnim {
+  0% {
+    background-color: #96a757;
+  }
+  50% {
+    background-color: #2c221a;
+  }
+  100% {
+    background-color: #96a757;
+  }
+}
+@keyframes timeTextAnim {
+  0% {
+    color: #2c221a;
+  }
+  50% {
+    color: #ffecc1;
+  }
+  100% {
+    color: #2c221a;
+  }
 }
 .timeLine {
   img {
@@ -295,45 +375,86 @@ footer {
   position: absolute;
   left: 0%;
   bottom: 0%;
+  animation: el1Anim 5s linear infinite;
+}
+@keyframes el1Anim {
+  0% {
+    transform: translateY(30%);
+  }
+  50% {
+    transform: translateY(-400%);
+  }
+  100% {
+    transform: translateY(30%);
+  }
 }
 .el2 {
   width: 25vw;
   right: 0%;
   bottom: 0%;
+  animation: el1Anim 5s linear infinite;
+  animation-delay: 2s;
   position: absolute;
 }
 .el3 {
   left: 0%;
   width: 15vw;
   position: absolute;
+  animation: el2Anim 5s linear infinite;
+}
+@keyframes el2Anim {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(400%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
 }
 .el4 {
   right: 10%;
   width: 25vw;
   position: absolute;
+  animation: el2Anim 5s linear infinite;
 }
 .el5 {
   right: 40%;
   width: 15vw;
   position: absolute;
+  animation: el2Anim 5s linear infinite;
 }
 .el6 {
   left: 20%;
   width: 25vw;
   bottom: 0%;
+  animation: el1Anim 5s linear infinite;
+  animation-delay: 1s;
   position: absolute;
+  animation: el2Anim 5s linear infinite;
 }
 .el7 {
   left: 60%;
   bottom: 0%;
+  animation: el1Anim 5s linear infinite;
   position: absolute;
+  animation: el2Anim 5s linear infinite;
 }
 .el8 {
   top: 10%;
   left: 30%;
   position: absolute;
+  animation: el2Anim 5s linear infinite;
 }
-
+@keyframes emblemAnim {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @keyframes dropAnimMain {
   0% {
     transform: translateY(-50%);
@@ -342,7 +463,6 @@ footer {
     transform: translateY(0%);
   }
 }
-
 @keyframes runAnimMain {
   0% {
     transform: translateX(0%);
@@ -382,7 +502,7 @@ footer {
     bottom: 5%;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .rowBlock {
     flex-direction: column;
   }
